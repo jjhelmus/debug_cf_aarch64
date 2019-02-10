@@ -31,12 +31,11 @@ DOCKER_IMAGE="condaforge/linux-anvil-aarch64"
 #DONE_CANARY="$ARTIFACTS/conda-forge-build-done-${CONFIG}"
 #rm -f "$DONE_CANARY"
 # Not all providers run with a real tty.  Disable using one
-DOCKER_RUN_ARGS=" -it"
+DOCKER_RUN_ARGS=" "
 
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run ${DOCKER_RUN_ARGS} \
            -v "${FEEDSTOCK_ROOT}":/home/conda/feedstock_root:rw,z \
-           -e HOST_USER_ID \
            $DOCKER_IMAGE \
            bash \
            /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh
