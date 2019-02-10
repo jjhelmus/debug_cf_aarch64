@@ -5,7 +5,7 @@
 # changes to this script, consider a proposal to conda-smithy so that other feedstocks can also
 # benefit from the improvement.
 
-set -xeuo pipefail
+set -Exeuo pipefail
 export PYTHONUNBUFFERED=1
 export FEEDSTOCK_ROOT=/home/conda/feedstock_root
 export RECIPE_ROOT=/home/conda/recipe_root
