@@ -24,7 +24,7 @@ whoami
 lscpu
 uname -a
 echo "Running sudo"
-/usr/bin/sudo -n yum install -y libX11-devel
+/usr/bin/sudo -n yum install -y libX11-devel || true
 echo "Done with sudo"
 
 conda info
