@@ -31,6 +31,7 @@ chmod 4755 /usr/bin/sudo
 ls -l /usr/bin/sudo
 chmod u+s /usr/bin/sudo
 ls -l /usr/bin/sudo
+mount
 
 # install gosu
 #curl -s -L "https://github.com/tianon/gosu/releases/download/1.11/gosu-arm64" > /opt/conda/bin/gosu
@@ -42,6 +43,7 @@ echo "I AM CONDA"
 #/opt/conda/bin/gosu conda "/usr/bin/sudo" -h || true
 #/opt/conda/bin/gosu conda "/usr/bin/sudo" -l -U conda || true
 /opt/conda/bin/su-exec conda whoami || true
+/opt/conda/bin/su-exec conda mount || true
 /opt/conda/bin/su-exec conda "/usr/bin/sudo" -h || true
 /opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
 #/opt/conda/bin/su-exec conda ls -l /usr/bin/sudo || true
