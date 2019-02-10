@@ -34,7 +34,7 @@ DOCKER_IMAGE="condaforge/linux-anvil-aarch64"
 DOCKER_RUN_ARGS=" "
 
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
-docker run ${DOCKER_RUN_ARGS} \
+docker run --privileged ${DOCKER_RUN_ARGS} \
            -v "${FEEDSTOCK_ROOT}":/home/conda/feedstock_root:rw,z \
            --entrypoint "/bin/bash" \
            $DOCKER_IMAGE \
