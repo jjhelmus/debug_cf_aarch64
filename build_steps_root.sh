@@ -44,7 +44,6 @@ echo "I AM CONDA"
 # back as root
 echo "I AM ROOT"
 whoami
-dmesg
 ls /var/log/
 cat /var/log/sudo_debug.log
 #exec /opt/conda/bin/su-exec conda /usr/bin/sudo yum install -y libX11-devel
