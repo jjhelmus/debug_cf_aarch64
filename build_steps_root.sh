@@ -32,6 +32,7 @@ ls -l /usr/bin/sudo
 chmod u+s /usr/bin/sudo
 ls -l /usr/bin/sudo
 mount
+/usr/bin/sudo whoami
 
 # install gosu
 #curl -s -L "https://github.com/tianon/gosu/releases/download/1.11/gosu-arm64" > /opt/conda/bin/gosu
