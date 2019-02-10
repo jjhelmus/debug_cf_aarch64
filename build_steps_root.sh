@@ -25,8 +25,7 @@ cat /etc/sudoers
 echo "Debug sudo /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
 echo "Debug sudoers.so /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
 cat /etc/sudo.conf
-
-yum install -y strace
+chmod 4755 /usr/bin/sudo
 
 # install gosu
 #curl -s -L "https://github.com/tianon/gosu/releases/download/1.11/gosu-arm64" > /opt/conda/bin/gosu
@@ -37,9 +36,9 @@ echo "I AM CONDA"
 #/opt/conda/bin/gosu conda whoami || true
 #/opt/conda/bin/gosu conda "/usr/bin/sudo" -h || true
 #/opt/conda/bin/gosu conda "/usr/bin/sudo" -l -U conda || true
-/opt/conda/bin/su-exec conda strace whoami || true
-/opt/conda/bin/su-exec conda strace "/usr/bin/sudo" -h || true
-#/opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
+/opt/conda/bin/su-exec conda whoami || true
+/opt/conda/bin/su-exec conda "/usr/bin/sudo" -h || true
+/opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
 #/opt/conda/bin/su-exec conda ls -l /usr/bin/sudo || true
 #/opt/conda/bin/su-exec conda "/usr/bin/sudo" yum install -y libX11-devel || true
 
