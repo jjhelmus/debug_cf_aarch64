@@ -8,6 +8,7 @@
 set -Exeuo pipefail
 
 # debugging
+echo "I AM ROOT"
 whoami
 lscpu
 uname -a
@@ -21,12 +22,21 @@ readelf -h /usr/bin/sudo
 /usr/bin/sudo -l -U conda
 cat /etc/sudoers
 
+echo "Debug sudo /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
+echo "Debug sudoers.so /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
+cat /etc/sudo.conf
+
 # run command as conda user
-echo "Running as conda"
+echo "I AM CONDA"
+/opt/conda/bin/su-exec conda whoami || true
 /opt/conda/bin/su-exec conda "/usr/bin/sudo" -h || true
 /opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
 #/opt/conda/bin/su-exec conda "/usr/bin/sudo" yum install -y libX11-devel || true
+
+# back as root
+echo "I AM ROOT"
 whoami
+cat /var/log/sudo_debug.log
 #exec /opt/conda/bin/su-exec conda /usr/bin/sudo yum install -y libX11-devel
 exit 9
 
