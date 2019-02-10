@@ -19,16 +19,17 @@ useradd --shell /bin/bash -u $USER_ID -G lucky -o -c "" -m conda
 # 
 readelf -h /usr/bin/sudo
 /usr/bin/sudo -l -U conda
-
+cat /etc/sudoers
 
 # run command as conda user
 echo "Running as conda"
+/opt/conda/bin/su-exec conda "/usr/bin/sudo" -h || true
 /opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
-/opt/conda/bin/su-exec conda "/usr/bin/sudo" yum install -y libX11-devel || true
+#/opt/conda/bin/su-exec conda "/usr/bin/sudo" yum install -y libX11-devel || true
 whoami
 #exec /opt/conda/bin/su-exec conda /usr/bin/sudo yum install -y libX11-devel
-
 exit 9
+
 
 
 
