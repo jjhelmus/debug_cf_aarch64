@@ -31,7 +31,7 @@ DOCKER_IMAGE="condaforge/linux-anvil-aarch64"
 #DONE_CANARY="$ARTIFACTS/conda-forge-build-done-${CONFIG}"
 #rm -f "$DONE_CANARY"
 # Not all providers run with a real tty.  Disable using one
-DOCKER_RUN_ARGS=" "
+DOCKER_RUN_ARGS=" -it"
 
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run ${DOCKER_RUN_ARGS} \
