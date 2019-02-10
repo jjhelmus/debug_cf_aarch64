@@ -44,6 +44,7 @@ echo "I AM CONDA"
 #/opt/conda/bin/gosu conda "/usr/bin/sudo" -h || true
 #/opt/conda/bin/gosu conda "/usr/bin/sudo" -l -U conda || true
 /opt/conda/bin/su-exec conda whoami || true
+/opt/conda/bin/su-exec conda df `which sudo` || true
 /opt/conda/bin/su-exec conda mount || true
 /opt/conda/bin/su-exec conda "/usr/bin/sudo" -h || true
 /opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
