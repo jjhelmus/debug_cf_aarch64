@@ -23,8 +23,10 @@ CONDARC
 whoami
 lscpu
 uname -a
+file /usr/bin/sudo
+/usr/bin/sudo -l -U conda
 echo "Running sudo"
-/usr/bin/sudo -n yum install -y libX11-devel
+/usr/bin/sudo yum install -y libX11-devel
 echo "Done with sudo"
 
 conda info
