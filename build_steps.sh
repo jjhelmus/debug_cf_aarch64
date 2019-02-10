@@ -24,8 +24,9 @@ whoami
 lscpu
 uname -a
 #file /usr/bin/sudo
-/usr/bin/sudo -l -U conda
 echo "Running sudo"
+/usr/bin/sudo -l -U conda 2>&1 > capture || true
+cat capture
 /usr/bin/sudo yum install -y libX11-devel
 echo "Done with sudo"
 
