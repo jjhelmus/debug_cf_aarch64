@@ -18,5 +18,5 @@ jobs:
       ls /proc/sys/fs/binfmt_misc/
     displayName: Configure binfmt_misc
 
-  - script: run_docker_build.sh
+  - script: ./run_docker_build.sh
     displayName: Run docker build
