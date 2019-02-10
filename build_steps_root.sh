@@ -25,7 +25,9 @@ cat /etc/sudoers
 echo "Debug sudo /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
 echo "Debug sudoers.so /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
 cat /etc/sudo.conf
+
 chmod 4755 /usr/bin/sudo
+ls -l /usr/bin/sudo
 
 # install gosu
 #curl -s -L "https://github.com/tianon/gosu/releases/download/1.11/gosu-arm64" > /opt/conda/bin/gosu
