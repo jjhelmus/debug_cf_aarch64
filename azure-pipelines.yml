@@ -19,4 +19,5 @@ jobs:
     displayName: Configure binfmt_misc
 
   - script: ./run_docker_build.sh
+  - script: ./run_as_root.sh
     displayName: Run docker build
