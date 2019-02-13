@@ -13,7 +13,10 @@ whoami
 lscpu
 uname -a
 
+mkdir -p /opt/conda
 # create conda user
+groupadd -g 32766 lucky
+chgrp -R lucky /opt/conda && chmod -R g=u /opt/conda
 USER_ID=1001
 useradd --shell /bin/bash -u $USER_ID -G lucky -o -c "" -m conda
 
