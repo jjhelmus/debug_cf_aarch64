@@ -35,20 +35,21 @@ mount
 /usr/bin/sudo whoami
 
 # install gosu
-#curl -s -L "https://github.com/tianon/gosu/releases/download/1.11/gosu-arm64" > /opt/conda/bin/gosu
-#chmod +x /opt/conda/bin/gosu
+mkdir -p /opt/conda/bin
+curl -s -L "https://github.com/tianon/gosu/releases/download/1.11/gosu-arm64" > /opt/conda/bin/gosu
+chmod +x /opt/conda/bin/gosu
 
 # run command as conda user
 echo "I AM CONDA"
-#/opt/conda/bin/gosu conda whoami || true
-#/opt/conda/bin/gosu conda "/usr/bin/sudo" -h || true
-#/opt/conda/bin/gosu conda "/usr/bin/sudo" -l -U conda || true
-/opt/conda/bin/su-exec conda whoami || true
-/opt/conda/bin/su-exec conda df `which sudo` || true
-/opt/conda/bin/su-exec conda ls -l /usr/bin/sudo || true
-/opt/conda/bin/su-exec conda mount || true
-/opt/conda/bin/su-exec conda "/usr/bin/sudo" -h || true
-/opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
+/opt/conda/bin/gosu conda whoami || true
+/opt/conda/bin/gosu conda "/usr/bin/sudo" -h || true
+/opt/conda/bin/gosu conda "/usr/bin/sudo" -l -U conda || true
+#/opt/conda/bin/su-exec conda whoami || true
+#/opt/conda/bin/su-exec conda df `which sudo` || true
+#/opt/conda/bin/su-exec conda ls -l /usr/bin/sudo || true
+#/opt/conda/bin/su-exec conda mount || true
+#/opt/conda/bin/su-exec conda "/usr/bin/sudo" -h || true
+#/opt/conda/bin/su-exec conda "/usr/bin/sudo" -l -U conda || true
 #/opt/conda/bin/su-exec conda ls -l /usr/bin/sudo || true
 #/opt/conda/bin/su-exec conda "/usr/bin/sudo" yum install -y libX11-devel || true
 

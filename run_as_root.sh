@@ -25,7 +25,8 @@ if hash docker-machine 2> /dev/null && docker-machine active > /dev/null; then
 fi
 
 #pip install shyaml
-DOCKER_IMAGE="condaforge/linux-anvil-aarch64"
+#DOCKER_IMAGE="condaforge/linux-anvil-aarch64"
+DOCKER_IMAGE="jjhelmus/debug_cf_aarch64"
 
 #mkdir -p "$ARTIFACTS"
 #DONE_CANARY="$ARTIFACTS/conda-forge-build-done-${CONFIG}"
@@ -36,7 +37,6 @@ DOCKER_RUN_ARGS=" "
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run --privileged ${DOCKER_RUN_ARGS} \
            -v "${FEEDSTOCK_ROOT}":/home/conda/feedstock_root:rw,z \
-           --entrypoint "/bin/bash" \
            $DOCKER_IMAGE \
            /home/conda/feedstock_root/${PROVIDER_DIR}/build_steps_root.sh
 
