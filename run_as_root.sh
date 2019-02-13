@@ -26,7 +26,7 @@ fi
 
 #pip install shyaml
 #DOCKER_IMAGE="condaforge/linux-anvil-aarch64"
-DOCKER_IMAGE="jjhelmus/debug_cf_aarch64"
+DOCKER_IMAGE="jjhelmus/debug_cf_aarch64:initial"
 
 #mkdir -p "$ARTIFACTS"
 #DONE_CANARY="$ARTIFACTS/conda-forge-build-done-${CONFIG}"
