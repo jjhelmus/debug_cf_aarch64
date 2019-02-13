@@ -21,13 +21,15 @@ USER_ID=1001
 useradd --shell /bin/bash -u $USER_ID -G lucky -o -c "" -m conda
 
 # 
+
+echo 'conda ALL=NOPASSWD: /usr/bin/yum' >> /etc/sudoers
 readelf -h /usr/bin/sudo
 /usr/bin/sudo -l -U conda
 cat /etc/sudoers
 
-echo "Debug sudo /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
-echo "Debug sudoers.so /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
-cat /etc/sudo.conf
+#echo "Debug sudo /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
+#echo "Debug sudoers.so /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
+#cat /etc/sudo.conf
 
 #ls -l /usr/bin/sudo
 #chmod 4755 /usr/bin/sudo
@@ -60,7 +62,7 @@ echo "I AM CONDA"
 echo "I AM ROOT"
 whoami
 ls /var/log/
-cat /var/log/sudo_debug.log
+#cat /var/log/sudo_debug.log
 #exec /opt/conda/bin/su-exec conda /usr/bin/sudo yum install -y libX11-devel
 exit 9
 
