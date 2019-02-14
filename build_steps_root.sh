@@ -21,8 +21,10 @@ USER_ID=1001
 useradd --shell /bin/bash -u $USER_ID -G lucky -o -c "" -m conda
 
 # 
+usermod -aG wheel conda
+echo '%wheel         ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-echo 'conda ALL=NOPASSWD: /usr/bin/yum' >> /etc/sudoers
+#echo 'conda ALL=NOPASSWD: /usr/bin/yum' >> /etc/sudoers
 readelf -h /usr/bin/sudo
 /usr/bin/sudo -l -U conda
 cat /etc/sudoers
