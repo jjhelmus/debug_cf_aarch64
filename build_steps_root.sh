@@ -60,6 +60,11 @@ echo "I AM CONDA"
 #/opt/conda/bin/su-exec conda ls -l /usr/bin/sudo || true
 #/opt/conda/bin/su-exec conda "/usr/bin/sudo" yum install -y libX11-devel || true
 
+su -c whoami conda
+su -c '/usr/bin/sudo -h' conda
+su -c '/usr/bin/sudo -l -U conda' conda
+
+
 # back as root
 echo "I AM ROOT"
 whoami
