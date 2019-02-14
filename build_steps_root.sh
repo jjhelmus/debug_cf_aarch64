@@ -33,12 +33,12 @@ cat /etc/sudoers
 #echo "Debug sudoers.so /var/log/sudo_debug.log all@debug" >> /etc/sudo.conf
 #cat /etc/sudo.conf
 
-ls -l /usr/bin/sudo
-chmod 4755 /usr/bin/sudo
-ls -l /usr/bin/sudo
-chmod u+s /usr/bin/sudo
-ls -l /usr/bin/sudo
-mount
+#ls -l /usr/bin/sudo
+#chmod 4755 /usr/bin/sudo
+#ls -l /usr/bin/sudo
+#chmod u+s /usr/bin/sudo
+#ls -l /usr/bin/sudo
+#mount
 /usr/bin/sudo whoami
 
 # install gosu
